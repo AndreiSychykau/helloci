@@ -1,7 +1,4 @@
 Hello, CI!
-=======
-Added text
-Added text2
 
 Test projects for "Hello, CI" training
 
