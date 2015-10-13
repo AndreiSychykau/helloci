@@ -1,4 +1,4 @@
-New Text - Hello, CI!
+Hello, CI!
 
 Test projects for "Hello, CI" training
 
