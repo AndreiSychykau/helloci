@@ -1,5 +1,4 @@
 Hello, CI!
-qqq
 
 Test projects for "Hello, CI" training
 
