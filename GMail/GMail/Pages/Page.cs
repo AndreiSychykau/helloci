@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Linq;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Support.PageObjects;
 using System.Threading;
+using OpenQA.Selenium.Interactions;
 
 namespace GMailTest.Pages
 {
@@ -27,10 +29,9 @@ namespace GMailTest.Pages
             return driver.FindElements(locator).Count() > 0;
         }
 
-        public void pageRefresh()
+        public void PageRefresh()
         {
             this.driver.Navigate().Refresh();
-            Thread.Sleep(1000);
             try
             {
                 this.driver.SwitchTo().Alert().Accept(); 
@@ -38,6 +39,14 @@ namespace GMailTest.Pages
             catch (NoAlertPresentException) { }
         }
 
+        public void WaitForElementPresentAndEnabled(By locator, int secondsToWait = 30)
+        {
+            new WebDriverWait(this.driver, new TimeSpan(0, 0, secondsToWait))
+               .Until(d => d.FindElement(locator).Enabled
+                   && d.FindElement(locator).Displayed
+               );
+        }
+   
     }
 
 }
