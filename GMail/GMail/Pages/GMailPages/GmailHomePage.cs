@@ -92,12 +92,12 @@ namespace GMailTest.Pages.GMailPages
             {
                 case "drafts":
                         draftsMail.Click();
-                        wait.Until(ExpectedConditions.UrlMatches("https://mail.google.com/mail/#drafts"));
+                        wait.Until(ExpectedConditions.UrlContains("#drafts"));
                         break;
 
                 case "sentmail":
                         sentMail.Click();
-                        wait.Until(ExpectedConditions.UrlMatches("https://mail.google.com/mail/#sent"));
+                        wait.Until(ExpectedConditions.UrlContains("#sent"));
                         break;
 
                 default :
@@ -129,7 +129,7 @@ namespace GMailTest.Pages.GMailPages
 
             Console.WriteLine("... Go to Drafts folder...");
             draftsMail.Click();
-            wait.Until(ExpectedConditions.UrlMatches("https://mail.google.com/mail/#drafts"));
+            wait.Until(ExpectedConditions.UrlContains("#drafts"));
             Console.WriteLine("... PASSED!");
             
             Console.WriteLine("... Search for message with subject \"{0}\" and open it...", subject);
@@ -170,12 +170,12 @@ namespace GMailTest.Pages.GMailPages
             {
                 case "drafts":
                     draftsMail.Click();
-                    wait.Until(ExpectedConditions.UrlMatches("https://mail.google.com/mail/#drafts"));
+                    wait.Until(ExpectedConditions.UrlContains("#drafts"));
                     break;
 
                 case "sentmail":
                     sentMail.Click();
-                    wait.Until(ExpectedConditions.UrlMatches("https://mail.google.com/mail/#sent"));
+                    wait.Until(ExpectedConditions.UrlContains("#sent"));
                     break;
 
                 default:
@@ -193,7 +193,7 @@ namespace GMailTest.Pages.GMailPages
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             inboxMail.Click();
-            wait.Until(ExpectedConditions.UrlMatches("https://mail.google.com/mail/#inbox"));
+            wait.Until(ExpectedConditions.UrlContains("#inbox"));
         }
 
     }
